@@ -1,7 +1,7 @@
 <template>
   <div class="codemirrorroot">
     <codemirror v-model="code" :options="cmOption" class="input"></codemirror>
-    <codemirror :value="evaled" :options="readOnlyCmOption" class="input"></codemirror>
+    <codemirror :value="evaled" :options="readOnlyCmOption" class="output"></codemirror>
   </div>
 </template>
 
@@ -46,6 +46,8 @@
       code () {
         this.evalCode()
       }
+    },
+    components: {
     }
   }
 </script>
@@ -54,6 +56,7 @@
 .input, .output {
   flex-grow: 1;
   width: 100%;
+  height: 100%;
 }
 
 .codemirrorroot {
